@@ -26,6 +26,8 @@ namespace GestionLaboratoire.Data
                 new Analyses { AnalyseID= 5, Nom = "Bilirubine totale", Prix = 33, ValeurMin = 0.2, ValeurMax = 1.2 },
                 new Analyses { AnalyseID= 6, Nom = "Vitesse de sedimentation", Prix=40, ValeurMin = 0, ValeurMax = 17 }
              );
+            modelBuilder.Entity<Utilisateur>().HasData(
+                new Utilisateur { UtilisateurID = 1, Nom = "Salma", Email = "ighirouaioursalma@gmail.com", MotDePasse = "1234", Role = "Administrateur" });
         }
     }
 }

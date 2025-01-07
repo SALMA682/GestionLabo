@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GestionLaboratoire.styles.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
@@ -22,12 +24,18 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
+                        
                             <li class="nav-item">
-                                <a class="nav-link" href="@Url.Action("Index", "Analyses")">Analyses</a>
-                            </li>
+                                <a class="nav-link text-dark" href="@Url.Action("Index", "Analyses")">Analyses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="@Url.Action("Informations", "Informations")">Informations</a>
+                        </li>
+                        <li class="nav-item ms-auto" >
+                            <a class="nav-link text-dark" href="@Url.Action("Index", "Authentification")">
+                                <i class="bi bi-person-fill"></i>Authentification
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +49,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - GestionLaboratoire - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - GestionLaboratoire - <a asp-area="" asp-controller="Informations" asp-action="Informations">Informations</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
