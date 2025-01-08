@@ -35,17 +35,64 @@ namespace GestionLaboratoire.Controllers
             TempData["echec"] = "L'opération d'ajout a Echoué";
             return View();
         }
-
-        public IActionResult ModifierAnalyse()
+        [HttpGet]
+        public IActionResult ModifierAnalyse(int? id)
         {
-            // Logique pour modifier une analyse
+                if (id == null || id == 0)
+                {
+                    return NotFound();
+                }
+                Analyses? CatDb = _context.Analyses.Find(id);
+                if (CatDb == null)
+                {
+                    return NotFound();
+                }
+                return View(CatDb);
+            }
+
+        [HttpPost]
+        public IActionResult ModifierAnalyse(Analyses obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Analyses.Update(obj);
+                _context.SaveChanges();
+                TempData["succes"] = "L'opération de Modification est réussie";
+                return RedirectToAction("Index", "Analyses");
+            }
+            TempData["echec"] = "L'opération de modification a Echoué";
             return View();
         }
+        
 
-        public IActionResult SupprimerAnalyse()
+        public IActionResult SupprimerAnalyse(int? id)
         {
-            // Logique pour supprimer une analyse
-            return View();
+                if (id == null || id == 0)
+                {
+                    return NotFound();
+                }
+                Analyses? CatDb = _context.Analyses.Find(id);
+                if (CatDb == null)
+                {
+                    return NotFound();
+                }
+                return View(CatDb);
+
+    }
+        [HttpPost, ActionName("Supprimer")]
+        public IActionResult SupprimerPost(int? id)
+        {
+            Analyses? obj = _context.Analyses.Find(id);
+            if (obj == null)
+            {
+                TempData["echec"] = "L'opération de Suppression a Echoué";
+                return NotFound();
+            }
+            TempData["succes"] = "L'opération de Suppression est réussie";
+            _context.Analyses.Remove(obj);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Analyses");
         }
         public IActionResult AjouterAssistant()
         {

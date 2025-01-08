@@ -1,0 +1,25 @@
+﻿@model IEnumerable<GestionLaboratoire.Models.Analyses>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Modifier</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.AnalyseID</td>
+                <td>@item.Nom</td>
+                <td>@item.Prix</td>
+                <td>
+                    <a class="btn btn-warning" href="@Url.Action("ModifierAnalyse", "Utilisateurs", new { id = item.AnalyseID })">Modifier</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
