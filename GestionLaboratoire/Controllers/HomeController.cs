@@ -22,18 +22,7 @@ namespace GestionLaboratoire.Controllers
         {
             return View();
         }
-        public IActionResult AccueilAdministrateur()
-        {
-            return View();
-        }
-        public IActionResult AccueilPreleveur()
-        {
-            return View();
-        }
-        public IActionResult AccueilAssistant()
-        {
-            return View();
-        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

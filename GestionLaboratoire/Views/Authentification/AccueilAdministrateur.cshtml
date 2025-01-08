@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Accueil-Accueil administrateur";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Bienvenue</h1>
+
+    <div class="row">
+        <!-- Bloc Analyses -->
+        <div class="col-md-4">
+            <div class="card text-center shadow mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h3>Gestion des Analyses</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ajouter, modifier ou supprimer des analyses.</p>
+                    <a class="btn btn-success d-block mb-2" href="@Url.Action("AjouterAnalyse", "Utilisateurs")">Ajouter</a>
+                    <a class="btn btn-warning d-block mb-2" href="@Url.Action("ModifierAnalyse", "Utilisateurs")">Modifier</a>
+                    <a class="btn btn-danger d-block" href="@Url.Action("SupprimerAnalyse", "Utilisateurs")">Supprimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloc Assistants -->
+        <div class="col-md-4">
+            <div class="card text-center shadow mb-4">
+                <div class="card-header bg-secondary text-white">
+                    <h3>Gestion des Assistants</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ajouter, modifier ou supprimer des assistants.</p>
+                    <a class="btn btn-success d-block mb-2" href="@Url.Action("AjouterAssistant", "Administrateur")">Ajouter</a>
+                    <a class="btn btn-warning d-block mb-2" href="@Url.Action("ModifierAssistant", "Administrateur")">Modifier</a>
+                    <a class="btn btn-danger d-block" href="@Url.Action("SupprimerAssistant", "Administrateur")">Supprimer</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bloc Préleveurs -->
+        <div class="col-md-4">
+            <div class="card text-center shadow mb-4">
+                <div class="card-header bg-info text-white">
+                    <h3>Gestion des Préleveurs</h3>
+                </div>
+                <div class="card-body">
+                    <p>Ajouter, modifier ou supprimer des préleveurs.</p>
+                    <a class="btn btn-success d-block mb-2" href="@Url.Action("AjouterPreleveur", "Administrateur")">Ajouter</a>
+                    <a class="btn btn-warning d-block mb-2" href="@Url.Action("ModifierPreleveur", "Administrateur")">Modifier</a>
+                    <a class="btn btn-danger d-block" href="@Url.Action("SupprimerPreleveur", "Administrateur")">Supprimer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card-header {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .card-body p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            font-size: 0.9em;
+        }
+
+        .card {
+            height: 100%;
+        }
+    </style>
+}
+

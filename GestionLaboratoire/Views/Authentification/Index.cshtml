@@ -14,14 +14,14 @@
         <h1>Bienvenue au Laboratoire Médical</h1>
 
         <!-- Formulaire d'authentification -->
-        <form method="post" action="@Url.Action("Index", "Authentification")">
+        <form method="post" action="@Url.Action("Connexion", "Authentification")">
             <div class="mb-3">
                 <label for="username" class="form-label">Nom d'utilisateur</label>
                 <input type="text" class="form-control" id="Nom" name="nomUtilisateur" required />
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Mot de passe</label>
-                <input type="password" class="form-control" id="MotdePasse" name="Password" required />
+                <input type="password" class="form-control" id="MotdePasse" name="MotDePasse" required />
             </div>
             <button type="submit" class="btn btn-primary">Se connecter</button>
         </form>

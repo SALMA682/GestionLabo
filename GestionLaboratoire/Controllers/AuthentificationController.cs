@@ -18,9 +18,21 @@ namespace GestionLaboratoire.Controllers
         {
             return View();
         }
+        public IActionResult AccueilAdministrateur()
+        {
+            return View();
+        }
+        public IActionResult AccueilPreleveur()
+        {
+            return View();
+        }
+        public IActionResult AccueilAssistant()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public IActionResult Index(string nomUtilisateur, string motDePasse)
+        public IActionResult Connexion(string nomUtilisateur, string motDePasse)
         {
             // Vérifier si l'utilisateur existe dans la base de données
             var utilisateur = _context.Utilisateurs
@@ -32,11 +44,11 @@ namespace GestionLaboratoire.Controllers
                 switch (utilisateur.Role)
                 {
                     case "Administrateur":
-                        return RedirectToAction("AccueilAdministrateur", "Home");
+                        return  RedirectToAction("AccueilAdministrateur");
                     case "Preleveur":
-                        return RedirectToAction("AccueilPreleveur", "Home");
+                        return RedirectToAction("AccueilPreleveur");
                     case "Assistant":
-                        return RedirectToAction("AccueilAssistant", "Home");
+                        return RedirectToAction("AccueilAssistant");
                     default:
                         TempData["Error"] = "Rôle non reconnu.";
                         break;
@@ -46,8 +58,8 @@ namespace GestionLaboratoire.Controllers
             {
                 TempData["Error"] = "Nom d'utilisateur ou mot de passe incorrect.";
             }
-
             return View();
+
         }
     }
 }

@@ -26,7 +26,9 @@ namespace GestionLaboratoire.Data
                 new Analyses { AnalyseID = 6, Nom = "Vitesse de sedimentation", Prix = 40, ValeurMin = 0, ValeurMax = 17 }
              );
             modelBuilder.Entity<Utilisateur>().HasData(
-                new Utilisateur { UtilisateurID = 1, Nom = "Salma", Email = "ighirouaioursalma@gmail.com", MotDePasse = "1234", Role = "Administrateur" });
+                new Utilisateur { UtilisateurID = 1, Nom = "Salma", Email = "ighirouaioursalma@gmail.com", MotDePasse = "1234", Role = "Administrateur" },
+                 new Utilisateur { UtilisateurID = 2, Nom = "Chaimaa", Email = "Chaimaa@gmail.com", MotDePasse = "5678", Role = "Assistant" },
+                  new Utilisateur { UtilisateurID = 3, Nom = "Salah", Email = "Salah@gmail.com", MotDePasse = "9012", Role = "Preleveur" });
         }
     }
 }
