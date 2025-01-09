@@ -6,3 +6,12 @@
     Layout = "_Layout";
 }
 <h1>Bonjour</h1>
+
+<div class="card-body">
+    <p> Vous pouvez  ajouter, modifier ,supprimer ou afficher des assistants.</p>
+    <a class="btn btn-success d-block mb-2" href="@Url.Action("AjouterPatient", "Utilisateurs")">Ajouter</a>
+    <a class="btn btn-warning d-block mb-2" href="@Url.Action("ModifierPatient", "Utilisateurs")">Modifier</a>
+    <a class="btn btn-danger d-block" href="@Url.Action("SupprimerPatient", "Utilisateurs")">Supprimer</a>
+    <a class="btn btn-warning d-block mb-2" href="@Url.Action("AfficherPatient", "Utilisateurs")">Afficher</a>
+</div>
+

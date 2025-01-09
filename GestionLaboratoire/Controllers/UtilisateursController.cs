@@ -81,6 +81,33 @@ namespace GestionLaboratoire.Controllers
             // Logique pour supprimer une analyse
             return View();
         }
+        //Ajouter patient
+        
+        public IActionResult  AjouterPatient()
+		{
+			// Logique pour Ajouter un Patient
+			return View();
+		}
+        // supprimer patient
+      
+        public IActionResult SupprimerPatient()
+		{
+			// Logique pour supprimer un patient
+			return View();
+		}
+        // Modifier patient
+        
+        public IActionResult ModifierPatient()
+		{
+			// Logique pour Modifier un patient
+			return View();
+		}
+        
+        
 
-    }
+
+
+
+
+	}
 }

@@ -29,6 +29,12 @@ namespace GestionLaboratoire.Data
                 new Utilisateur { UtilisateurID = 1, Nom = "Salma", Email = "ighirouaioursalma@gmail.com", MotDePasse = "1234", Role = "Administrateur" },
                  new Utilisateur { UtilisateurID = 2, Nom = "Chaimaa", Email = "Chaimaa@gmail.com", MotDePasse = "5678", Role = "Assistant" },
                   new Utilisateur { UtilisateurID = 3, Nom = "Salah", Email = "Salah@gmail.com", MotDePasse = "9012", Role = "Preleveur" });
-        }
+            modelBuilder.Entity<Patient>().HasData(
+               new Patient{ PatientID = 1, Nom = "kamal", Prenom="ka", CIN="aze123", Contact="0657849678", Email = "kamal@gmail.com", MedecinTraitant="hicham" },
+                new Patient { PatientID = 2, Nom = "houda", Prenom = "ho", CIN = "rty456", Contact = "0612568340", Email = "houda@gmail.com", MedecinTraitant = "hicham" },
+                 new Patient { PatientID = 3, Nom = "salim", Prenom = "sa", CIN = "uio890", Contact = "0657459836", Email = "salim@gmail.com", MedecinTraitant = "hicham" });
+        
+     }
+       
     }
 }
