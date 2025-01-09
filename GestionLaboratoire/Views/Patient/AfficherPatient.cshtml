@@ -16,18 +16,26 @@
             <th>MedecinTraitant</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var patient in Model)
-        {
-            <tr>
-                <td>@patient.PatientID</td>
-                <td>@patient.Nom</td>
-                <td>@patient.Prenom</td>
-                <td>@patient.CIN</td>
-                <td>@patient.Contact</td>
-                <td>@patient.Email</td>
-                <td>@patient.MedecinTraitant</td>
-            </tr>
-        }
-    </tbody>
+    @if (Model != null)
+    {
+        <tbody>
+            @foreach (var patient in Model)
+            {
+                <tr>
+                    <td>@patient.PatientID</td>
+                    <td>@patient.Nom</td>
+                    <td>@patient.Prenom</td>
+                    <td>@patient.CIN</td>
+                    <td>@patient.Contact</td>
+                    <td>@patient.Email</td>
+                    <td>@patient.MedecinTraitant</td>
+                </tr>
+            }
+        </tbody>
+    }
+    else
+    {
+        <p>Aucun patient disponible.</p>
+    }
 </table>
+

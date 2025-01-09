@@ -1,23 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using GestionLaboratoire.Data;
+﻿using GestionLaboratoire.Data;
 using GestionLaboratoire.Models;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
-namespace GestionLaboratoire.Controllers
+public class PatientController : Controller
 {
-    public class PatientController : Controller
+    private readonly ApplicationDbContext _context;
+
+    public PatientController(ApplicationDbContext context)
     {
-        private readonly ApplicationDbContext _context;
-
-        public PatientController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-        public IActionResult Index()
-        {
-            var patient = _context.Patients.ToList();
-            return View(patient);
-        }
+        _context = context ?? throw new ArgumentNullException(nameof(context));
     }
+
+    public IActionResult AfficherPatient()
+    {
+        var patients = _context.Patients.ToList();
+        return View(patients);
+    }
+    
+
 }

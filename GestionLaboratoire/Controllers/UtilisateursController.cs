@@ -153,6 +153,14 @@ namespace GestionLaboratoire.Controllers
 			// Logique pour Ajouter un Patient
 			return View();
 		}
+
+
+
+
+
+
+
+
         // supprimer patient
       
         public IActionResult SupprimerPatient()
@@ -168,11 +176,12 @@ namespace GestionLaboratoire.Controllers
 			return View();
 		}
         
-        
 
 
 
 
 
-	}
+
+
+    }
 }
