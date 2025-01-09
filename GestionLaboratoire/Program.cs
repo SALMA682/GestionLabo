@@ -38,6 +38,12 @@ namespace GestionLaboratoire
     pattern: "Analyses/{action=Index}/{id?}",
     defaults: new { controller = "Analyses", action = "Index" });
 
+
+         name: "patient",
+         pattern: "Patient/{action=Index}/{id?}",
+         defaults: new { controller = "Patient", action = "Index" });
+
+
             app.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

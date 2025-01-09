@@ -1,5 +1,7 @@
-﻿using GestionLaboratoire.Data;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using GestionLaboratoire.Data;
+using GestionLaboratoire.Models;
+using System.Linq;
 
 namespace GestionLaboratoire.Controllers
 {
@@ -14,18 +16,8 @@ namespace GestionLaboratoire.Controllers
 
         public IActionResult Index()
         {
-            var patient = _context.Patients.ToList();  // Récupère les données de la table Patient
-            if (patient == null || !patient.Any())
-            {
-                return NotFound();
-            }
-            return View(patient);  // Passe les données à la vue
+            var patient = _context.Patients.ToList();
+            return View(patient);
         }
     }
-
-    /*public IActionResult Index()
-        {
-            return View();
-        }
-    }*/
 }
