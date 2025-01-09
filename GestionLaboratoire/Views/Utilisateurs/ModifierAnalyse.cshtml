@@ -1,5 +1,54 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@{
-}
+
+@model Analyses
+<form method="post" action="@Url.Action("ModifierAnalyse", "Utilisateurs")">
+    <input asp-for="AnalyseID" hidden />
+    <div class="border pt-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary"> Modifier une analyse </h2>
+            <hr />
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="AnalyseID" class="p-0"></label>
+            <input asp-for="AnalyseID" class="form-control" />
+            <span asp-validation-for="AnalyseID" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Nom" class="p-0"></label>
+            <input asp-for="Nom" class="form-control" />
+            <span asp-validation-for="Nom" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="Prix" class="p-0"></label>
+            <input asp-for="Prix" class="form-control" />
+            <span asp-validation-for="Prix" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="ValeurMin" class="p-0"></label>
+            <input asp-for="ValeurMin" class="form-control" />
+            <span asp-validation-for="ValeurMin" class="text-danger"></span>
+        </div>
+        <div class="mb-3 row p-1">
+            <label asp-for="ValeurMax" class="p-0"></label>
+            <input asp-for="ValeurMax" class="form-control" />
+            <span asp-validation-for="ValeurMax" class="text-danger"></span>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-3">
+                <button type="submit" class="btn btn-primary form-control">Ajouter </button>
+            </div>
+            <div class="col-6 col-md-3">
+                <a asp-controller="Analyses" asp-action="Index" class="btn btn-outline-secondary border form-control">
+                    Retour à la liste
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</form>
+
+
+
