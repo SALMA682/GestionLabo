@@ -3,7 +3,7 @@
 *@
 
 @model Analyses
-<form method="post" action="@Url.Action("SupprimerAnalyse", "Utilisateurs")">
+<form method="post" action="@Url.Action("SupprimerPost", "Utilisateurs")">
     <div class="border pt-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary"> Supprimer une analyse </h2>
@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-6 col-md-3">
-                <button type="submit" class="btn btn-primary form-control">Ajouter </button>
+                <button type="submit" asp-controller="Utilisateurs" asp-action="SupprimerPost" class="btn btn-outline-secondary border form-control">Supprimer </button>
             </div>
             <div class="col-6 col-md-3">
                 <a asp-controller="Analyses" asp-action="Index" class="btn btn-outline-secondary border form-control">

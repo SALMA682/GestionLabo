@@ -1,4 +1,3 @@
-using AspNetCore;
 using GestionLaboratoire.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;

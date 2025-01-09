@@ -35,20 +35,30 @@ namespace GestionLaboratoire.Controllers
             TempData["echec"] = "L'opération d'ajout a Echoué";
             return View();
         }
+        public IActionResult IndexModification()
+        {
+            var analyses = _context.Analyses.ToList();  // Récupère les données de la table Analyses
+            if (analyses == null || !analyses.Any())
+            {
+                return NotFound();
+            }
+            return View(analyses);  // Passe les données à la vue
+        }
+
         [HttpGet]
         public IActionResult ModifierAnalyse(int? id)
         {
-                if (id == null || id == 0)
-                {
-                    return NotFound();
-                }
-                Analyses? CatDb = _context.Analyses.Find(id);
-                if (CatDb == null)
-                {
-                    return NotFound();
-                }
-                return View(CatDb);
+            if (id == null || id == 0)
+            {
+                return NotFound();
             }
+            Analyses? CatDb = _context.Analyses.Find(id);
+            if (CatDb == null)
+            {
+                return NotFound();
+            }
+            return View(CatDb);
+        }
 
         [HttpPost]
         public IActionResult ModifierAnalyse(Analyses obj)
@@ -63,22 +73,30 @@ namespace GestionLaboratoire.Controllers
             TempData["echec"] = "L'opération de modification a Echoué";
             return View();
         }
-        
+        public IActionResult IndexSupprimer()
+        {
+            var analyses = _context.Analyses.ToList();  // Récupère les données de la table Analyses
+            if (analyses == null || !analyses.Any())
+            {
+                return NotFound();
+            }
+            return View(analyses);
+        }
 
         public IActionResult SupprimerAnalyse(int? id)
         {
-                if (id == null || id == 0)
-                {
-                    return NotFound();
-                }
-                Analyses? CatDb = _context.Analyses.Find(id);
-                if (CatDb == null)
-                {
-                    return NotFound();
-                }
-                return View(CatDb);
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Analyses? CatDb = _context.Analyses.Find(id);
+            if (CatDb == null)
+            {
+                return NotFound();
+            }
+            return View(CatDb);
 
-    }
+        }
         [HttpPost, ActionName("Supprimer")]
         public IActionResult SupprimerPost(int? id)
         {

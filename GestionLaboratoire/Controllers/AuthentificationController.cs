@@ -1,8 +1,5 @@
-﻿using AspNetCore;
-using GestionLaboratoire.Data;
+﻿using GestionLaboratoire.Data;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Linq;
 
 
 namespace GestionLaboratoire.Controllers
@@ -23,7 +20,7 @@ namespace GestionLaboratoire.Controllers
         }
 
         [HttpPost]
-        public IActionResult Index(string nomUtilisateur, string motDePasse)
+        public IActionResult Connexion(string nomUtilisateur, string motDePasse)
         {
             // Vérifier si l'utilisateur existe dans la base de données
             var utilisateur = _context.Utilisateurs

@@ -22,7 +22,7 @@ namespace GestionLaboratoire.Controllers
             return View(analyses);  // Passe les données à la vue
         }
     }
-    
+
     /*public IActionResult Index()
         {
             return View();
