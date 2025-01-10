@@ -175,9 +175,20 @@ namespace GestionLaboratoire.Controllers
 			// Logique pour Modifier un patient
 			return View();
 		}
-        
 
-
+        [HttpPost]
+        public IActionResult AjouterEchantillon(Echantillon obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Echantillons.Add(obj);
+                _context.SaveChanges();
+                TempData["succes"] = "L'opération de l'ajout est réussie";
+                return RedirectToAction("Index", "Analyses");
+            }
+            TempData["echec"] = "L'opération d'ajout a Echoué";
+            return View();
+        }
 
 
 

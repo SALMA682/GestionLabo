@@ -7,7 +7,7 @@
 namespace GestionLaboratoire.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class MiseAJour : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace GestionLaboratoire.Migrations
                     AnalyseID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nom = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Prix = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Prix = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     ValeurMin = table.Column<double>(type: "float", nullable: false),
                     ValeurMax = table.Column<double>(type: "float", nullable: false)
                 },
@@ -101,6 +101,26 @@ namespace GestionLaboratoire.Migrations
                     { 4, "Cholestérol total", 60m, 2.0, 1.0 },
                     { 5, "Bilirubine totale", 33m, 1.2, 0.20000000000000001 },
                     { 6, "Vitesse de sedimentation", 40m, 17.0, 0.0 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Patients",
+                columns: new[] { "PatientID", "CIN", "Contact", "Email", "MedecinTraitant", "Nom", "Prenom" },
+                values: new object[,]
+                {
+                    { 1, "aze123", "0657849678", "kamal@gmail.com", "hicham", "kamal", "ka" },
+                    { 2, "rty456", "0612568340", "houda@gmail.com", "hicham", "houda", "ho" },
+                    { 3, "uio890", "0657459836", "salim@gmail.com", "hicham", "salim", "sa" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Utilisateurs",
+                columns: new[] { "UtilisateurID", "Email", "MotDePasse", "Nom", "Role" },
+                values: new object[,]
+                {
+                    { 1, "ighirouaioursalma@gmail.com", "1234", "Salma", "Administrateur" },
+                    { 2, "Chaimaa@gmail.com", "5678", "Chaimaa", "Assistant" },
+                    { 3, "Salah@gmail.com", "9012", "Salah", "Preleveur" }
                 });
 
             migrationBuilder.CreateIndex(

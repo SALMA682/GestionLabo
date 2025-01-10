@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionLaboratoire.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250108200557_AjoutUtilisateurs")]
-    partial class AjoutUtilisateurs
+    [Migration("20250110161608_TEST")]
+    partial class TEST
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,6 +37,7 @@ namespace GestionLaboratoire.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Prix")
+                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<double>("ValeurMax")
@@ -165,6 +166,38 @@ namespace GestionLaboratoire.Migrations
                     b.HasKey("PatientID");
 
                     b.ToTable("Patients");
+
+                    b.HasData(
+                        new
+                        {
+                            PatientID = 1,
+                            CIN = "aze123",
+                            Contact = "0657849678",
+                            Email = "kamal@gmail.com",
+                            MedecinTraitant = "hicham",
+                            Nom = "kamal",
+                            Prenom = "ka"
+                        },
+                        new
+                        {
+                            PatientID = 2,
+                            CIN = "rty456",
+                            Contact = "0612568340",
+                            Email = "houda@gmail.com",
+                            MedecinTraitant = "hicham",
+                            Nom = "houda",
+                            Prenom = "ho"
+                        },
+                        new
+                        {
+                            PatientID = 3,
+                            CIN = "uio890",
+                            Contact = "0657459836",
+                            Email = "salim@gmail.com",
+                            MedecinTraitant = "hicham",
+                            Nom = "salim",
+                            Prenom = "sa"
+                        });
                 });
 
             modelBuilder.Entity("GestionLaboratoire.Models.Utilisateur", b =>

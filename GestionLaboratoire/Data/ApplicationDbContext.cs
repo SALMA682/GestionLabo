@@ -17,6 +17,7 @@ namespace GestionLaboratoire.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Analyses>().HasKey(a => a.AnalyseID);
+            modelBuilder.Entity<Analyses>().Property(a => a.Prix).HasPrecision(18,2);
             modelBuilder.Entity<Analyses>().HasData(
                 new Analyses { AnalyseID = 1, Nom = "Glycémie à jeun", Prix = 33, ValeurMin = 0.70, ValeurMax = 1.10 },
                 new Analyses { AnalyseID = 2, Nom = "Créatinine Sérique", Prix = 33, ValeurMin = 5, ValeurMax = 11 },
